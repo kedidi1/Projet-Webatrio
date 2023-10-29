@@ -30,5 +30,4 @@ public class JobServiceImpl implements JobService {
         return jobDTOs;
     }
 
-    // Vous pouvez ajouter d'autres méthodes de service pour gérer les emplois, si nécessaire.
 }

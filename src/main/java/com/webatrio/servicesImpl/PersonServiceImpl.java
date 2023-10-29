@@ -26,6 +26,7 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public List<PersonDTO> getAllPersonsOrderedByNameWithAgeAndCurrentJobs() {
+		// TODO Auto-generated method stub
         List<Person> persons = personRepository.findAll(Sort.by(Sort.Order.asc("lastName").ignoreCase()));
         List<PersonDTO> personDTOs = new ArrayList();
 
@@ -41,20 +42,24 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public List<Person> getPersonsByCompany(String companyName) {
+		// TODO Auto-generated method stub
         return personRepository.findByJobsCompanyNameIgnoreCase(companyName);
     }
 
     @Override
     public List<Job> getJobsOfPersonBetweenDates(Long personId, LocalDate startDate, LocalDate endDate) {
-        return jobRepository.findByPersonIdAndStartDateBetween(personId, startDate, endDate);
+		// TODO Auto-generated method stub
+    	return jobRepository.findByPersonIdAndStartDateBetween(personId, startDate, endDate);
     }
 
     private int calculateAge(LocalDate dateOfBirth) {
+		// TODO Auto-generated method stub
         LocalDate currentDate = LocalDate.now();
         return Period.between(dateOfBirth, currentDate).getYears();
     }
 
     private List<Job> getCurrentJobs(List<Job> jobs) {
+		// TODO Auto-generated method stub
         List<Job> currentJobs = new ArrayList<>();
         LocalDate currentDate = LocalDate.now();
 
@@ -66,4 +71,10 @@ public class PersonServiceImpl implements PersonService {
 
         return currentJobs;
     }
+
+	@Override
+	public Person save(Person person) {
+		// TODO Auto-generated method stub
+		return personRepository.save(person);
+	}
 }
