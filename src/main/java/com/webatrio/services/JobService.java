@@ -7,4 +7,5 @@ import com.webatrio.dto.JobDTO;
 
 public interface JobService {
     List<JobDTO> getJobsOfPersonBetweenDates(Long personId, LocalDate startDate, LocalDate endDate);
+    public List<JobDTO> getAllJobs();
 }

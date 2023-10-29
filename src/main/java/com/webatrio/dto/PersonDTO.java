@@ -24,7 +24,23 @@ public class PersonDTO {
     }
 
 
-    public Long getId() {
+    
+
+
+	public PersonDTO(Long id, String firstName, String lastName, LocalDate localDate, ArrayList arrayList) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = calculateAge(localDate);
+		this.currentJobs = arrayList;
+	}
+
+
+
+
+
+	public Long getId() {
 		return id;
 	}
 

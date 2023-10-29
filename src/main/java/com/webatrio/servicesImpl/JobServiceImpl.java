@@ -30,4 +30,11 @@ public class JobServiceImpl implements JobService {
         return jobDTOs;
     }
 
+	public List<JobDTO> getAllJobs() {
+		// TODO Auto-generated method stub
+		return null;
+		//return List<Job> jobs = jobRepository.findAll();
+
+	}
+
 }

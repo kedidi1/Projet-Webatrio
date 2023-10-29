@@ -21,8 +21,7 @@ public class PersonServiceImpl implements PersonService {
     @Autowired
     private PersonRepository personRepository;
 
-    @Autowired
-    private JobRepository jobRepository;
+
 
     @Override
     public List<PersonDTO> getAllPersonsOrderedByNameWithAgeAndCurrentJobs() {
@@ -46,11 +45,7 @@ public class PersonServiceImpl implements PersonService {
         return personRepository.findByJobsCompanyNameIgnoreCase(companyName);
     }
 
-    @Override
-    public List<Job> getJobsOfPersonBetweenDates(Long personId, LocalDate startDate, LocalDate endDate) {
-		// TODO Auto-generated method stub
-    	return jobRepository.findByPersonIdAndStartDateBetween(personId, startDate, endDate);
-    }
+
 
     private int calculateAge(LocalDate dateOfBirth) {
 		// TODO Auto-generated method stub
